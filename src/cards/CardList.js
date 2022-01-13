@@ -12,6 +12,7 @@ const CardList = ({ cards, addCardAction, updateCardsAction, completeCardAction,
 
     const getCards = async () => {
         console.log("def")
+        await axios.post("http://localhost:5000/cards/reload")
         await axios.get("http://localhost:5000/cards")
         .then(function (response) {
                 console.log(response.data.allCards)
@@ -34,10 +35,9 @@ const CardList = ({ cards, addCardAction, updateCardsAction, completeCardAction,
 
     return (
         <div>
-            <h5>Dodaj nowa karte</h5>
-            <CardForm />
+            <h5>Karty Graficzne</h5>
+            <Link to={`/cards/add`}> Dodaj nowa karte</Link>
             <div className="ItemList">
-                <h5>Wszystkie paczki Świętego Mikołaja</h5>
                 {noCards()}
                 {cards.map(card => {
                     return (

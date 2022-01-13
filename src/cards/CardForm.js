@@ -12,10 +12,11 @@ const CardForm = ({ history, addCardAction }, props) => {
     }, [props])
 
     const handleSubmit = async (values) => {
-        addCardAction(values);
-        console.log(values)
         try {
-            await axios.post("http://localhost:5000/cards", values)
+            const cardToAdd = await axios.post("http://localhost:5000/cards", values)
+            console.log("123")
+            console.log(cardToAdd.data)
+            addCardAction(cardToAdd.data);
         }
         catch(err){
             console.log(err)
@@ -34,6 +35,8 @@ const CardForm = ({ history, addCardAction }, props) => {
                     releaseDate: '',
                     architecture: '',
                     company: '',
+                    aib: '',
+                    model: '',
                     score: ''
                 }}
                 onSubmit={(values) => handleSubmit(values)}
@@ -58,6 +61,10 @@ const CardForm = ({ history, addCardAction }, props) => {
                     <Field name="releaseDate" type="date"/><br/>
                     Architektura
                     <Field name="architecture"/><br/>
+                    Producent
+                    <Field name="aib"/><br/>
+                    Model karty
+                    <Field name="model"/><br/>
                     Wynik benchmark
                     <Field name="score"/><br/>
                     <button type="submit">
