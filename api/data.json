@@ -8,6 +8,8 @@
 		"releaseDate": "2020-12-12",
 		"architecture": "Ampere",
 		"company": "Nvidia",
+		"aib": "MSI",
+		"model": "Ventus 2X",
 		"score": "2000"
 	},
 	{
@@ -16,6 +18,8 @@
 		"series": "RTX 3000",
 		"releaseDate": "2020-12-12",
 		"architecture": "Ampere",
+		"aib": "Gigabyte",
+		"model": "Aorus",
 		"company": "Nvidia",
 		"score": "2500"
 	},
@@ -25,6 +29,8 @@
 		"series": "RX 6000",
 		"releaseDate": "2020-12-14",
 		"architecture": "RDNA 2",
+		"aib": "MSI",
+		"model": "Ventus 3X OC",
 		"company": "AMD",
 		"score": "2750"
 	}

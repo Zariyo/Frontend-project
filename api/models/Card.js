@@ -22,9 +22,20 @@ const cardSchema = new Schema({
         type: String,
         required: true,
     },
+    aib:{
+        type: String,
+        required: true,
+    },
+    model:{
+        type: String,
+        required: true,
+    },
     score:{
         type: Number,
         required: true,
+    },
+    imageurl:{
+        type: String,
     }
 });
 

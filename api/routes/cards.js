@@ -30,13 +30,15 @@ router.post('/reload', async (req, res) => {
 
 router.post('/', async (req, res) => {
   const card = new Card({
-    _id: req.body._id,
     name: req.body.name,
     series: req.body.series,
     releaseDate: req.body.releaseDate,
     architecture: req.body.architecture,
     company: req.body.company,
-    score: req.body.score
+    aib: req.body.aib,
+    model: req.body.model,
+    score: req.body.score,
+    imageurl: req.body.imageurl
   })
 
   try {
