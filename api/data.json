@@ -1,0 +1,32 @@
+{
+	"cards": 
+[
+	{
+		"_id": "61dc95c73916889fd4000000",
+		"name": "RTX 3060",
+		"series": "RTX 3000",
+		"releaseDate": "2020-12-12",
+		"architecture": "Ampere",
+		"company": "Nvidia",
+		"score": "2000"
+	},
+	{
+		"_id": "61dc96f8edbc9f1c04000000",
+		"name": "RTX 3070",
+		"series": "RTX 3000",
+		"releaseDate": "2020-12-12",
+		"architecture": "Ampere",
+		"company": "Nvidia",
+		"score": "2500"
+	},
+	{
+		"_id": "61dc97112c23c8e045000000",
+		"name": "RX 6800",
+		"series": "RX 6000",
+		"releaseDate": "2020-12-14",
+		"architecture": "RDNA 2",
+		"company": "AMD",
+		"score": "2750"
+	}
+]
+}
