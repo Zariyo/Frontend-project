@@ -9,7 +9,9 @@ import Home from './core/Home';
 import CardList from './cards/CardList'
 import CardDetails from './cards/CardDetails';
 import CardForm from './cards/CardForm';
-import Producents from './components/Producents';
+import ProducentList from './producents/ProducentList';
+import ProducentForm from './producents/ProducentForm';
+import ProducentDetails from './producents/ProducentDetails';
 
 function App() {
   return (
@@ -42,7 +44,13 @@ function App() {
             <CardList />
           </Route>
           <Route exact path="/producents">
-            <Producents/>
+            <ProducentList/>
+          </Route>
+          <Route exact path="/producents/add">
+            <ProducentForm/>
+          </Route>
+          <Route exact path="/producents/details/:name">
+            <ProducentDetails/>
           </Route>
           <Route exact path="/">
             <CardList /> {/*Zmienic na Menu glowne?*/}

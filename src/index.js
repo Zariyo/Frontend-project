@@ -7,12 +7,15 @@ import { applyMiddleware, combineReducers, createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { cardReducer } from './cards/CardReducer'
 import { downloadedReducer } from './downloaded/DownloadedReducer'
+import { producentReducer, ProducentReducer } from './producents/ProducentReducer'
 import logger from './middlewares/Logger';
+
 
 let store = createStore(
   combineReducers(
     {
       cards: cardReducer,
+      producents: producentReducer,
       downloaded: downloadedReducer,
     }
   ), applyMiddleware(logger));
