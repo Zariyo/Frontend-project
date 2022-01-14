@@ -34,5 +34,22 @@
 		"company": "AMD",
 		"score": "2750"
 	}
+],
+"producents":
+[
+	{
+		"_id": "61e169981ed20c52c457c4f9",
+		"name": "MSI",
+		"phone": 4487235122,
+		"address": "California",
+		"country": "USA"
+	},
+	{
+		"_id": "61e16a126176558a2bb636df",
+		"name": "Zotac",
+		"phone": 25455521524,
+		"address": "London",
+		"country": "UK"
+	}
 ]
 }

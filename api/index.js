@@ -1,12 +1,14 @@
 const express = require('express');
 const app = express();
 const cards = require('./routes/cards');
+const producents = require('./routes/producents')
 const cors = require('cors');
 
 app.use(express.json());
 app.use(cors())
 // „Podłączamy” obsługę „endpointów”, które zdefiniowaliśmy dla kolekcji 'cards' w katalogu routes/cards.js
 app.use('/cards', cards);
+app.use('/producents', producents)
 
 
 require('dotenv').config();
