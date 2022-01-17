@@ -4,10 +4,10 @@ import { Link } from "react-router-dom"
 import { useEffect, useState } from "react";
 import ProducentForm from '../producents/ProducentForm'
 import { addProducentAction, deleteProducentAction, updateProducentsAction, completeProducentAction } from "../producents/ProducentActions";
-import { userDownloadedChangeAction } from "../downloaded/DownloadedActions";
+import { producentDownloadedChangeAction } from "../downloaded/DownloadedActions";
 const axios = require('axios')
 const _ = require('lodash')
-const Producents = ({ producents, addProducentAction, updateProducentsAction, completeProducentAction, deleteProducentAction, productDownloadedChangeAction, downloaded }, props) => { 
+const Producents = ({ producents, addProducentAction, updateProducentsAction, completeProducentAction, deleteProducentAction, cardDownloadedChangeAction, downloaded }, props) => { 
 
 
     const getProducents = async () => {
@@ -17,27 +17,15 @@ const Producents = ({ producents, addProducentAction, updateProducentsAction, co
         .then(function (response) {
                 console.log(response.data.allProducents)
                 response.data.allProducents.map(producent => (addProducentAction(producent)))
-                userDownloadedChangeAction()
+                producentDownloadedChangeAction()
         })
     }   
 
-    useEffect(() => {
-        if (!downloaded[1]) {
-            getProducents() 
-        }
-    }, [downloaded])
-
     const noProducents = () => {
         if (producents.length == 0) {
-            return <button onClick={()=>userDownloadedChangeAction()}>Odswiez dane</button>
+            return <button onClick={()=>getProducents()}>Odswiez dane</button>
         }
     }
-
-    const setAib = () => {
-        
-    }
-
-
 
     return (
         <div>
@@ -47,7 +35,7 @@ const Producents = ({ producents, addProducentAction, updateProducentsAction, co
             
             {producents.map(producent => {
     return (
-        <div className="Item" key={producent.name}>
+        <div className="Item" key={producent._id}>
             <Link to={`/producents/${producent.name}`}>Producent: {producent.name}</Link>
             <button onClick={() => deleteProducentAction(producent)}>Usuń</button>
         </div>)
@@ -74,7 +62,7 @@ const mapDispatchToProps = {
     addProducentAction,
     deleteProducentAction,
     completeProducentAction,
-    userDownloadedChangeAction
+    producentDownloadedChangeAction
 }
 
 
