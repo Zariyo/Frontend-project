@@ -5,18 +5,19 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import Home from './core/Home';
-import CardList from './cards/CardList'
-import CardDetails from './cards/CardDetails';
-import CardForm from './cards/CardForm';
-import ProducentList from './producents/ProducentList';
-import ProducentForm from './producents/ProducentForm';
-import ProducentDetails from './producents/ProducentDetails';
+import CardList from './ui/cards/CardList'
+import CardDetails from './ui/cards/CardDetails';
+import CardForm from './ui/cards/CardForm';
+import CardEdit from './ui/cards/CardEdit';
+import ProducentList from './ui/producents/ProducentList';
+import ProducentForm from './ui/producents/ProducentForm';
+import ProducentDetails from './ui/producents/ProducentDetails';
+import ProducentEdit from './ui/producents/ProducentEdit';
 
 function App() {
   return (
     <Router>
-      <div>
+      <div className='main-body'>
         <nav className="Navbar">
           <ul>
             <li>
@@ -34,6 +35,9 @@ function App() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
+        <Route exact path="/cards/:id/edit">
+            <CardEdit />
+          </Route>
           <Route exact path="/cards/add">
             <CardForm/>
           </Route>
@@ -51,6 +55,9 @@ function App() {
           </Route>
           <Route exact path="/producents/details/:name">
             <ProducentDetails/>
+          </Route>
+          <Route exact path="/producents/:name/edit">
+            <ProducentEdit/>
           </Route>
           <Route exact path="/">
             <CardList /> {/*Zmienic na Menu glowne?*/}

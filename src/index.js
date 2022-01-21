@@ -2,12 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import thunk from 'redux-thunk';
 import reportWebVitals from './reportWebVitals';
+import { createMiddleware } from 'redux-api-middleware';
 import { applyMiddleware, combineReducers, createStore } from 'redux';
 import { Provider } from 'react-redux';
-import { cardReducer } from './cards/CardReducer'
-import { downloadedReducer } from './downloaded/DownloadedReducer'
-import { producentReducer, ProducentReducer } from './producents/ProducentReducer'
+import { cardReducer } from './ducks/cards/CardReducer'
+import { producentReducer } from './ducks/producents/ProducentReducer'
 import logger from './middlewares/Logger';
 
 
@@ -16,9 +17,8 @@ let store = createStore(
     {
       cards: cardReducer,
       producents: producentReducer,
-      downloaded: downloadedReducer,
     }
-  ), applyMiddleware(logger));
+  ), applyMiddleware(thunk,createMiddleware(), logger));
 
 ReactDOM.render(
   <React.StrictMode>
