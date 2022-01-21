@@ -34,6 +34,9 @@ router.post('/', async (req, res) => {
     phone: req.body.phone,
     address: req.body.address,
     country: req.body.country,
+    supports: req.body.supports,
+    imgurl: req.body.imgurl,
+    creationDate: req.body.creationDate
   })
 
   try {
@@ -60,20 +63,24 @@ try {
 
 
 router.put('/:id', async (req, res) => {
-  const id = req.params.id;
+  let id = req.params.id
   const producent = new Producent({
+    _id: id,
     name: req.body.name,
-    series: req.body.series,
-    releaseDate: req.body.releaseDate
+    phone: req.body.phone,
+    address: req.body.address,
+    country: req.body.country,
+    supports: req.body.supports,
+    imgurl: req.body.imgurl,
+    creationDate: req.body.creationDate
   })
 
   try {
     const producentToUpdate = await Producent.findById(id);
     if (producentToUpdate) {
       const updated = await Producent.updateOne(producentToUpdate, {...req.body})
-      return res.send("producent has been updated")
     }
-    const newProducent = await producent.save();
+    const newProducent = producent
     return res.send(newProducent)
   } catch(err) {
     return res.status(500).send({error: err.message});

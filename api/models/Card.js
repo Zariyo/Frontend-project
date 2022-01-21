@@ -36,6 +36,9 @@ const cardSchema = new Schema({
     },
     imageurl:{
         type: String,
+    },
+    rgb:{
+        type: Boolean,
     }
 });
 

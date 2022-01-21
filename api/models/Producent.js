@@ -16,37 +16,18 @@ const producentSchema = new Schema({
     },
     country: {
         type: String,
+        require: true,
+    },
+    supports:{
+        type: Array,
+    },
+    imgurl:{
+        type: String,
+    },
+    creationDate:{
+        type: Date,
+        require: true
     }
 });
 
 module.exports = model('Producent', producentSchema);
-
-
-/*Firma cardu
-<Field as="select" name="company">
-<option value="msi">MSI</option>
-<option value="gigabyte">Gigabyte</option>
-<option value="asus">Asus</option>
-</Field>
-Producent cardu<br />
-<div className="manu">
-<label>
-    AMD
-    <Field type="radio" name="manu" value="AMD" />
-</label>
-<label>
-    Nvidia
-    <Field type="radio" name="manu" value="Nvidia" />
-</label>
-</div>
-<div className="rgb">
-<h1>Czy ma rgb?</h1>
-<Field type="checkbox" name="rgb" />
-</div>
-*/
-
-/*
-<div>Firma robiaca card: {card.company}</div>
-<div>Tworca czesci cardu: {card.manu}</div>
-<div>Czy ma rgb? {checkRgb()}</div>
-*/

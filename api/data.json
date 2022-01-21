@@ -10,7 +10,8 @@
 		"company": "Nvidia",
 		"aib": "MSI",
 		"model": "Ventus 2X",
-		"score": "2000"
+		"score": "2000",
+		"imageurl": "https://asset.msi.com/resize/image/global/product/product_2_20200929103100_5f729c64482df.png62405b38c58fe0f07fcef2367d8a9ba1/1024.png"
 	},
 	{
 		"_id": "61dc96f8edbc9f1c04000000",
@@ -21,7 +22,8 @@
 		"aib": "Gigabyte",
 		"model": "Aorus",
 		"company": "Nvidia",
-		"score": "2500"
+		"score": "2500",
+		"rgb": true
 	},
 	{
 		"_id": "61dc97112c23c8e045000000",
@@ -33,7 +35,67 @@
 		"model": "Ventus 3X OC",
 		"company": "AMD",
 		"score": "2750"
+	},
+	{
+		"_id": "61e84b71d208c430821dff6f",
+		"name": "RX 6900XT",
+		"series": "RX 6000",
+		"releaseDate": "2020-12-14",
+		"architecture": "RDNA 2",
+		"aib": "Sapphire",
+		"model": "Nitro OC",
+		"company": "AMD",
+		"score": "4000"
+	},
+	{
+		"_id": "61e84bc854881e4bd917b136",
+		"name": "RTX 3090",
+		"series": "RTX 3000",
+		"releaseDate": "2020-12-13",
+		"architecture": "Ampere",
+		"aib": "Zotac",
+		"model": "Trinity OC",
+		"company": "Nvidia",
+		"score": "3900",
+		"rgb": true,
+		"imageurl": "https://images.onexstore.pl/images/products/35021/ZOTAC-GeForce-RTX-3080-TRINITY-OC-10GB-GDDR6X-320bit641b413.png"
+	},
+	{
+		"_id": "61e84d10860656497cf48875",
+		"name": "RX 5700XT",
+		"series": "RX 5000",
+		"releaseDate": "2018-06-13",
+		"architecture": "RDNA 1",
+		"aib": "Gigabyte",
+		"model": "Gaming OC",
+		"company": "AMD",
+		"score": "2100",
+		"imageurl": "https://www.avadirect.com/Pictures/500/12948674_1.png"
+	},
+	{
+		"_id": "61e84e4563aa48ff4057a48f",
+		"name": "RTX 2060",
+		"series": "RTX 2000",
+		"releaseDate": "2018-04-11",
+		"architecture": "Turing",
+		"aib": "Zotac",
+		"model": "Twin Edge",
+		"company": "Nvidia",
+		"score": "1700"
+	},
+	{
+		"_id": "61e84e4aff932a5ef13a4075",
+		"name": "R9 380",
+		"series": "R9 300",
+		"releaseDate": "2015-05-12",
+		"architecture": "GCN3",
+		"aib": "Sapphire",
+		"model": "Nitro+ OC",
+		"company": "AMD",
+		"score": "400",
+		"imageurl": "https://cdn.benchmark.pl/thumbs/uploads/products/2449/nitro-komparator.png/600x0x1.png"
 	}
+	
 ],
 "producents":
 [
@@ -41,15 +103,39 @@
 		"_id": "61e169981ed20c52c457c4f9",
 		"name": "MSI",
 		"phone": 4487235122,
-		"address": "California",
-		"country": "USA"
+		"address": "Kalifornia",
+		"country": "Stany Zjednoczone",
+		"supports": ["amd", "nvidia"],
+		"creationDate": "2003-11-02",
+		"imgurl": "https://logos-world.net/wp-content/uploads/2020/11/MSI-Logo-2011-2019.png"
 	},
 	{
 		"_id": "61e16a126176558a2bb636df",
 		"name": "Zotac",
 		"phone": 25455521524,
-		"address": "London",
-		"country": "UK"
+		"address": "Londyn",
+		"country": "Wielka Brytania",
+		"supports": ["nvidia"],
+		"creationDate": "2005-07-05"
+	},
+	{
+		"_id": "61e84b09edb7ef77f2898c43",
+		"name": "Sapphire",
+		"phone": 417743234,
+		"address": "Berlin",
+		"country": "Niemcy",
+		"supports": ["amd"],
+		"creationDate": "1994-02-15",
+		"imgurl": "https://www.amd.com/system/files/24937-sapphire-logo-1260x709.png"
+	},
+	{
+		"_id": "61e84b5d7f3f0dc040df9995",
+		"name": "Gigabyte",
+		"phone": 53256632243,
+		"address": "Nowy Jork",
+		"country": "USA",
+		"creationDate": "1990-08-04",
+		"supports": ["amd", "nvidia"]
 	}
 ]
 }

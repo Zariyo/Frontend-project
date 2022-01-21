@@ -38,7 +38,8 @@ router.post('/', async (req, res) => {
     aib: req.body.aib,
     model: req.body.model,
     score: req.body.score,
-    imageurl: req.body.imageurl
+    imageurl: req.body.imageurl,
+    rgb: req.body.rgb
   })
 
   try {
@@ -67,18 +68,25 @@ try {
 router.put('/:id', async (req, res) => {
   const id = req.params.id;
   const card = new Card({
+    _id: id,
     name: req.body.name,
     series: req.body.series,
-    releaseDate: req.body.releaseDate
+    releaseDate: req.body.releaseDate,
+    architecture: req.body.architecture,
+    company: req.body.company,
+    aib: req.body.aib,
+    model: req.body.model,
+    score: req.body.score,
+    imageurl: req.body.imageurl,
+    rgb: req.body.rgb
   })
 
   try {
     const cardToUpdate = await Card.findById(id);
     if (cardToUpdate) {
       const updated = await Card.updateOne(cardToUpdate, {...req.body})
-      return res.send("card has been updated")
     }
-    const newCard = await card.save();
+    const newCard = card
     return res.send(newCard)
   } catch(err) {
     return res.status(500).send({error: err.message});
