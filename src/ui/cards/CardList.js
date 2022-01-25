@@ -5,21 +5,8 @@ import { useEffect, useState } from "react";
 import { addCardAction, deleteCardAction, updateCardsAction, completeCardAction } from "../../ducks/cards/CardActions";
 import { getCards } from "../../ducks/cards/CardOperations";
 import { deleteCard } from "../../ducks/cards/CardOperations";
-const axios = require('axios')
 const _ = require('lodash')
-const CardList = ({ cards, addCardAction, deleteCardAction, getCards }, props) => {
-
-/*
-    const getCards = async () => {
-        console.log("def")
-        await axios.post("http://localhost:5000/cards/reload").then()
-        await axios.get("http://localhost:5000/cards/")
-            .then(async function (response) {
-                console.log(response.data.allCards)
-                await response.data.allCards.map(card => (addCardAction(card)))
-            })
-    }
-    */
+const CardList = ({ cards, addCardAction, deleteCardAction, getCards, deleteCard }, props) => {
 
     const [cardsTemp, setCardsTemp] = useState(cards)
 
@@ -30,25 +17,13 @@ const CardList = ({ cards, addCardAction, deleteCardAction, getCards }, props) =
         }
     }, [cards])
 
-    /*
-    useEffect(() => {
-        
-    }, [])
-    */
-
     
     const getCardsTemp = async (card) => {
         console.log("getting cards temp")
         await getCards()
         setCardsTemp(cards)
     }
-
-    const deleteCardTemp = async (card) => {
-        await deleteCard(card).then()
-        setCardsTemp(cardsTemp.filter(el => el._id !== card._id))
-    }
     
-
     const noCards = () => {
         if (cardsTemp.length === 0) {
             return <button onClick={() => getCardsTemp()}>Odswiez dane</button>
@@ -178,7 +153,7 @@ const CardList = ({ cards, addCardAction, deleteCardAction, getCards }, props) =
                                     <img alt="" src={getUrl(card)}></img>
                                     {card.aib + ' ' + card.name}
                                 </Link>
-                                <button onClick={() => deleteCardTemp(card)}>Usuń</button>
+                                <button onClick={() => deleteCard(card)}>Usuń</button>
                             </div>)
                     })}
                 </div>
@@ -199,7 +174,8 @@ const mapDispatchToProps = {
     addCardAction,
     deleteCardAction,
     completeCardAction,
-    getCards
+    getCards,
+    deleteCard
 }
 
 

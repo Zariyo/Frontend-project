@@ -5,11 +5,12 @@ export const getCards = () => {
     //console.log("cards get 1")
     return async dispatch => {
         try{
-            console.log("cards get 2")
+            console.log("getting cards")
             await axios.post("http://localhost:5000/cards/reload")
             const response = await axios.get("http://localhost:5000/cards/");
             if(response.status === 200){
-                response.data.map((card)=>( dispatch(addCardAction(card))))
+                console.log("dispatching getCards")
+                response.data.allCards.map((card)=>( dispatch(addCardAction(card))))
             }
                
         }catch(ex) {
@@ -18,8 +19,18 @@ export const getCards = () => {
     }
 }
 
-export const deleteCard = async (card) => {
-    deleteCardAction(card)
-    await axios.delete(`http://localhost:5000/cards/${card._id}`)
-    //setCardsTemp(cardsTemp.filter(el => el._id !== card._id))
+export const deleteCard = (card) => {
+    return async dispatch => {
+        try{
+            console.log("deleting card")
+            const response = await axios.delete(`http://localhost:5000/cards/${card._id}`);
+            if(response.status === 200){
+                console.log("dispatching deleteCard")
+                dispatch(deleteCardAction(card))
+            }
+               
+        }catch(ex) {
+            console.log(ex)
+        }
+    }
 }
